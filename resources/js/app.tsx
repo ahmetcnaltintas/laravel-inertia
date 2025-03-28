@@ -12,10 +12,10 @@ createInertiaApp({
     resolve: (name) => {
         // Eğer URL '/admin' ile başlıyorsa admin sayfalarını yükle
         if (window.location.pathname.startsWith('/admin')) {
-            return resolvePageComponent(`./admin/${name}.tsx`, import.meta.glob('./admin/**/*.tsx'));
+            return resolvePageComponent(`./${name}.tsx`, import.meta.glob('./**/*.tsx'));
         }
         // Aksi takdirde frontend sayfalarını yükle
-        return resolvePageComponent(`./frontend/${name}.tsx`, import.meta.glob('./frontend/**/*.tsx'));
+        return resolvePageComponent(`./${name}.tsx`, import.meta.glob('./**/*.tsx'));
     },
     setup({ el, App, props }) {
         const root = createRoot(el);

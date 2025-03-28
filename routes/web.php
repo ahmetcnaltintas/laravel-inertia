@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('hosgeldiniz');
+    return Inertia::render('frontend.hosgeldiniz');
 })->name('home');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('admin', function () {

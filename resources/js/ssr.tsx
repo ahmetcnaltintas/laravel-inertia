@@ -11,7 +11,7 @@ createServer((page) =>
         page,
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
-        resolve: (name) => resolvePageComponent(`./admin/${name}.tsx`, import.meta.glob('./admin/**/*.tsx')),
+        resolve: (name) => resolvePageComponent(`./${name}.tsx`, import.meta.glob('./**/*.tsx')),
         setup: ({ App, props }) => {
             /* eslint-disable */
             // @ts-expect-error
